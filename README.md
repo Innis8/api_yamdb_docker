@@ -16,7 +16,7 @@
 
 Часть сервисов доступна только после авторизации по JWT-токену.
 
-# Как запустить проект:
+# Как запустить проект в Docker:
 
 Клонировать репозиторий и перейти в него в командной строке:
 
@@ -28,37 +28,23 @@ git clone https://github.com/Innis8/api_yamdb.git
 cd api_yamdb
 ```
 
-Cоздать и активировать виртуальное окружение:
+В корневой директории проекта выполнить команду:
 
 ```
-python -m venv venv
+docker-compose up -d --build
 ```
 
-```
-source venv/Scripts/activate
-```
+Выполнить по очереди команды для создания миграций, создания суперюзера и сбора статики:
 
 ```
-python -m pip install --upgrade pip
+docker-compose exec web python manage.py migrate
+docker-compose exec web python manage.py createsuperuser
+docker-compose exec web python manage.py collectstatic --no-input
 ```
 
-Установить зависимости из файла requirements.txt:
-
-```
-pip install -r requirements.txt
-```
-
-Выполнить миграции:
-
-```
-python manage.py migrate
-```
-
-Запустить сервер:
-
-```
-python manage.py runserver
-```
+Проект будет доступен по адресу: http://localhost/
+Админка по адресу: http://localhost/admin/
+Общая документация по адресу: http://localhost/redoc/
 
 # Как пользоваться приложением:
 
