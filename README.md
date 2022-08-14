@@ -42,9 +42,9 @@ docker-compose exec web python manage.py createsuperuser
 docker-compose exec web python manage.py collectstatic --no-input
 ```
 
-Проект будет доступен по адресу: http://localhost/
-Админка по адресу: http://localhost/admin/
-Общая документация по адресу: http://localhost/redoc/
+Проект будет доступен по адресу: http://localhost/  
+Админка по адресу: http://localhost/admin/  
+Общая документация по адресу: http://localhost/redoc/  
 
 # Как пользоваться приложением:
 
