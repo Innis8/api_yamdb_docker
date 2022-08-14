@@ -1,11 +1,11 @@
-# Проект: api_yamdb
+## Проект: api_yamdb
 
 Авторы:
 - matsabaleuski
 - Innis8
 - Serge561
 
-# Описание
+## Описание
 
 Проект YaMDb, а также REST API сервис для него.
 Приложение позволяет:
@@ -16,7 +16,7 @@
 
 Часть сервисов доступна только после авторизации по JWT-токену.
 
-# Как запустить проект в Docker:
+### Запуск проекта в Docker
 
 Клонировать репозиторий и перейти в него в командной строке:
 
@@ -46,11 +46,31 @@ docker-compose exec web python manage.py collectstatic --no-input
 Админка по адресу: http://localhost/admin/  
 Общая документация по адресу: http://localhost/redoc/  
 
-# Как пользоваться приложением:
+### Остановка Docker
 
+Для остановки контейнеров без их удаления выполнить команду:
 
+```
+docker-compose stop
+```
 
-# Сервис AUTH
+Для остановки с удалением контейнеров и внутренних сетей, связанных с этими сервисами:
+
+```
+docker-compose down
+```
+
+Для остановки с удалением контейнеров и внутренних сетей, связанных с этими сервисами и томами:
+
+```
+docker-compose down -v
+```
+
+***
+### Возможности приложения:
+
+***
+### Сервис AUTH
 
 Регистрация пользователей и выдача токенов
 
@@ -108,8 +128,8 @@ POST /api/v1/auth/token/
 }
 ```
 
-
-# Сервис CATEGORIES
+***
+### Сервис CATEGORIES
 
 Категории (типы) произведений
 
@@ -181,8 +201,8 @@ POST /api/v1/categories/
  DELETE /api/v1/categories/{slug}/
 ```
 
-
-# Сервис GENRES
+***
+### Сервис GENRES
 
 Категории жанров
 
@@ -254,8 +274,8 @@ POST /api/v1/genres/
  DELETE /api/v1/genres/{slug}/
 ```
 
-
-# Сервис TITLES
+***
+### Сервис TITLES
 
 Произведения, к которым пишут отзывы (определённый фильм, книга или песенка).
 
@@ -438,8 +458,8 @@ PATCH /api/v1/titles/{titles_id}/
 ```
 
 
-
-# Сервис REVIEWS
+***
+### Сервис REVIEWS
 
 Отзывы
 
@@ -567,8 +587,8 @@ PATCH /api/v1/titles/{title_id}/reviews/{review_id}/
  DELETE /api/v1/titles/{title_id}/reviews/{review_id}/
 ```
 
-
-# Сервис COMMENTS
+***
+### Сервис COMMENTS
 
 Комментарии к отзывам
 
@@ -691,8 +711,8 @@ PATCH /api/v1/titles/{title_id}/reviews/{review_id}/comments/{comment_id}/
 ```
 
 
-
-# Сервис USERS
+***
+### Сервис USERS
 
 Пользователи
 
