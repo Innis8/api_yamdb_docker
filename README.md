@@ -25,6 +25,7 @@ python -c 'from django.core.management.utils import get_random_secret_key; print
 ```
 - информацию относительно PostgreSQL DB
 
+***
 ### Запуск проекта в Docker
 
 Клонировать репозиторий и перейти в него в командной строке:
@@ -55,6 +56,7 @@ docker-compose exec web python manage.py collectstatic --no-input
 Админка по адресу: http://localhost/admin/  
 Общая документация по адресу: http://localhost/redoc/  
 
+***
 ### Остановка Docker
 
 Для остановки контейнеров без их удаления выполнить команду:
